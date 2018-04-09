@@ -7,47 +7,29 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.alexis.projeteuropcar.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link UpdateAgenceFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link UpdateAgenceFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class UpdateAgenceFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private EditText raisonSociale;
+    private EditText siret;
+    private EditText voie;
+    private EditText codePostal;
+    private EditText ville;
+    private Button btnAdd;
 
-    private OnFragmentInteractionListener mListener;
+    private OnUpdateAgenceFragmentListener mListener;
 
     public UpdateAgenceFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UpdateAgenceFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static UpdateAgenceFragment newInstance(String param1, String param2) {
         UpdateAgenceFragment fragment = new UpdateAgenceFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,33 +38,37 @@ public class UpdateAgenceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_update_agence, container, false);
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_update_agence, container, false);
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+        this.raisonSociale = v.findViewById(R.id.agence_raison_sociale);
+        this.siret = v.findViewById(R.id.agence_siret);
+        this.voie = v.findViewById(R.id.agence_voie);
+        this.codePostal = v.findViewById(R.id.agence_cp);
+        this.ville = v.findViewById(R.id.agence_ville);
+        this.btnAdd = v.findViewById(R.id.agence_btn_submit);
+
+        this.btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onUpdateAgenceFragmentListener();
+            }
+        });
+
+        return v;
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof OnUpdateAgenceFragmentListener) {
+            mListener = (OnUpdateAgenceFragmentListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            throw new RuntimeException(context.toString() + " must implement OnFragmentInteractionListener");
         }
     }
 
@@ -92,18 +78,7 @@ public class UpdateAgenceFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    public interface OnUpdateAgenceFragmentListener {
+        void onUpdateAgenceFragmentListener();
     }
 }

@@ -3,11 +3,12 @@ package com.example.alexis.projeteuropcar.Activity;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.alexis.projeteuropcar.Fragment.UpdateAgenceFragment;
 import com.example.alexis.projeteuropcar.R;
 
-public class UpdateAgenceActivity extends AppCompatActivity implements UpdateAgenceFragment.OnFragmentInteractionListener {
+public class UpdateAgenceActivity extends AppCompatActivity implements UpdateAgenceFragment.OnUpdateAgenceFragmentListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,8 +16,9 @@ public class UpdateAgenceActivity extends AppCompatActivity implements UpdateAge
         setContentView(R.layout.activity_update_agence);
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
 
+    @Override
+    public void onUpdateAgenceFragmentListener() {
+        Toast.makeText(this, "TODO : Go to Location", Toast.LENGTH_SHORT).show();
     }
 }
