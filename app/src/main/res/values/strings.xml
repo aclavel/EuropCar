@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjetEuropcar</string>
+    <string name="app_name">Europcar</string>
     <string name="title_activity_update_agence">UpdateAgenceActivity</string>
     <string name="title_activity_accueil">AccueilActivity</string>
 
