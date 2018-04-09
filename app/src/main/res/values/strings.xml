@@ -3,6 +3,16 @@
     <string name="title_activity_update_agence">UpdateAgenceActivity</string>
     <string name="title_activity_accueil">AccueilActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mail">Adresse Mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="connexion">Connexion</string>
+    <string name="inscription">S\'inscrire</string>
+    <string name="confirm_password">Confirmation Mot de passe</string>
+    <string name="modify">Modifier</string>
+    <string name="ville">Ville :</string>
+    <string name="code_postal">Code postal :</string>
+    <string name="voie">Voie :</string>
+    <string name="siret">SIRET :</string>
+    <string name="raison_sociale">Raison sociale :</string>
+    <string name="votre_agence">Votre agence</string>
 </resources>

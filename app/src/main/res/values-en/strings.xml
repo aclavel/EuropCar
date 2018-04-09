@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Europcar</string>
+    <string name="title_activity_update_agence">UpdateAgenceActivity</string>
+    <string name="title_activity_accueil">AccueilActivity</string>
+
+    <string name="mail">email</string>
+    <string name="password">password</string>
+    <string name="connexion">Connexion</string>
+    <string name="inscription">Register</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="modify">Modify</string>
+    <string name="ville">City :</string>
+    <string name="code_postal">Postal code :</string>
+    <string name="voie">Street :</string>
+    <string name="siret">SIRET :</string>
+    <string name="raison_sociale">Social reason :</string>
+    <string name="votre_agence">Your agency</string>
+</resources>

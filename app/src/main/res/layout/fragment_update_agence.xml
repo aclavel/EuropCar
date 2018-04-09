@@ -8,14 +8,14 @@
         style="@style/titre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Votre agence" />
+        android:text="@string/votre_agence" />
 
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Raison sociale : " />
+            android:text="@string/raison_sociale" />
 
         <EditText
             android:id="@+id/agence_raison_sociale"
@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SIRET : " />
+            android:text="@string/siret" />
 
         <EditText
             android:id="@+id/agence_siret"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Voie : " />
+            android:text="@string/voie" />
 
         <EditText
             android:id="@+id/agence_voie"
@@ -45,7 +45,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Code postal : " />
+            android:text="@string/code_postal" />
 
         <EditText
             android:id="@+id/agence_cp"
@@ -55,7 +55,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ville : " />
+            android:text="@string/ville" />
 
         <EditText
             android:id="@+id/agence_ville"
@@ -72,7 +72,7 @@
                 style="@style/btn_vert"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Modifier" />
+                android:text="@string/modify" />
 
         </LinearLayout>
 

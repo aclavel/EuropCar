@@ -18,7 +18,7 @@ public class InscriptionActivity extends AppCompatActivity implements Inscriptio
 
     @Override
     public void onRegisterInteraction(String mail, String password, String confirmPassword) {
-        Intent intent = new Intent(InscriptionActivity.this, AccueilActivity.class);
+        Intent intent = new Intent(InscriptionActivity.this, UpdateAgenceActivity.class);
         startActivity(intent);
     }
 

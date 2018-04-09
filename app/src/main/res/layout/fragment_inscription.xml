@@ -6,13 +6,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inscription"
+        android:text=""
         style="@style/titre"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Adresse Mail"/>
+        android:text="@string/mail"/>
     <EditText
         android:id="@+id/mail"
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mot de passe"/>
+        android:text="@string/password"/>
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmation Mot de passe"/>
+        android:text="@string/confirm_password"/>
     <EditText
         android:id="@+id/confirmPassword"
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="S'inscrire"
+        android:text="@string/inscription"
         style="@style/btn_vert"/>
 
     </LinearLayout>
