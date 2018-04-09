@@ -1,6 +1,68 @@
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Raison sociale : "/>
+    <EditText
+        android:id="@+id/agence_raison_sociale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIRET : "/>
+    <EditText
+        android:id="@+id/agence_siret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voie : "/>
+    <EditText
+        android:id="@+id/agence_voie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Code postal : "/>
+    <EditText
+        android:id="@+id/agence_cp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ville : "/>
+    <EditText
+        android:id="@+id/agence_ville"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/agence_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/btn_vert"
+            android:text="Modifier"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
