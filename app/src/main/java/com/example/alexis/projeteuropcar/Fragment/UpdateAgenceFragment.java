@@ -55,7 +55,11 @@ public class UpdateAgenceFragment extends Fragment {
         this.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onUpdateAgenceFragmentListener();
+                if (raisonSociale.getText().toString() == ""){
+                    raisonSociale.setError("Veuillez remplir ce champ");
+                } else {
+                    mListener.onUpdateAgenceFragmentListener();
+                }
             }
         });
 
