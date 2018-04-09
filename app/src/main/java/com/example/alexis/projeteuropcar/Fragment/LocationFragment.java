@@ -80,8 +80,8 @@ public class LocationFragment extends Fragment {
         return v;
     }
 
-    public void refreshList(List<Location> recetteList){
-        ArrayAdapter adapter = new LocationListAdapter(getContext() ,R.layout.template_location_list,recetteList);
+    public void refreshList(List<Location> locationList){
+        ArrayAdapter adapter = new LocationListAdapter(getContext() ,R.layout.template_location_list,locationList);
         listLocation.setAdapter(adapter);
     }
 
