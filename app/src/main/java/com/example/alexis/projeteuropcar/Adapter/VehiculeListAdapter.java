@@ -5,4 +5,5 @@ package com.example.alexis.projeteuropcar.Adapter;
  */
 
 public class VehiculeListAdapter {
+
 }
