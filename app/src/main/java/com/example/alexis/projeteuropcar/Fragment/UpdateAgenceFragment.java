@@ -55,9 +55,13 @@ public class UpdateAgenceFragment extends Fragment {
         this.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (raisonSociale.getText().toString() == ""){
-                    raisonSociale.setError("Veuillez remplir ce champ");
-                } else {
+                if (raisonSociale.getText().toString() == ""){raisonSociale.setError("Veuillez remplir ce champ");}
+                if (siret.getText().toString() == ""){siret.setError("Veuillez remplir ce champ");}
+                if (voie.getText().toString() == ""){voie.setError("Veuillez remplir ce champ");}
+                if (codePostal.getText().toString() == ""){codePostal.setError("Veuillez remplir ce champ");}
+                if (ville.getText().toString() == ""){ville.setError("Veuillez remplir ce champ");}
+
+                if(raisonSociale.getText().toString() != "" && siret.getText().toString() != "" && voie.getText().toString() != "" && codePostal.getText().toString() != "" && ville.getText().toString() != "") {
                     mListener.onUpdateAgenceFragmentListener();
                 }
             }
