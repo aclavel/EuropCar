@@ -17,12 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.InscriptionActivity" />
-        <activity
-            android:name=".Activity.UpdateAgenceActivity"
-            android:label="@string/title_activity_update_agence"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.UpdateAgenceActivity"/>
         <activity android:name=".Activity.AccueilActivity" />
-        <activity android:name=".Activity.LocationActivity"></activity>
+        <activity android:name=".Activity.LocationActivity"/>
     </application>
 
 </manifest>
