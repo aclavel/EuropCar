@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.alexis.projeteuropcar.BO.Agence;
 import com.example.alexis.projeteuropcar.R;
 
 public class UpdateAgenceFragment extends Fragment {
@@ -42,7 +43,7 @@ public class UpdateAgenceFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_update_agence, container, false);
 
         this.raisonSociale = v.findViewById(R.id.agence_raison_sociale);
@@ -55,14 +56,26 @@ public class UpdateAgenceFragment extends Fragment {
         this.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (raisonSociale.getText().toString() == ""){raisonSociale.setError("Veuillez remplir ce champ");}
-                if (siret.getText().toString() == ""){siret.setError("Veuillez remplir ce champ");}
-                if (voie.getText().toString() == ""){voie.setError("Veuillez remplir ce champ");}
-                if (codePostal.getText().toString() == ""){codePostal.setError("Veuillez remplir ce champ");}
-                if (ville.getText().toString() == ""){ville.setError("Veuillez remplir ce champ");}
+                String raisonSocialeTxt = raisonSociale.getText().toString();
+                String siretTxt = siret.getText().toString();
+                String voieTxt = voie.getText().toString();
+                String codePostalTxt = codePostal.getText().toString();
+                String villeTxt = ville.getText().toString();
 
-                if(raisonSociale.getText().toString() != "" && siret.getText().toString() != "" && voie.getText().toString() != "" && codePostal.getText().toString() != "" && ville.getText().toString() != "") {
-                    mListener.onUpdateAgenceFragmentListener();
+                if (raisonSocialeTxt.isEmpty()){raisonSociale.setError("Veuillez remplir ce champ");}
+                else if (siretTxt.isEmpty()){siret.setError("Veuillez remplir ce champ");}
+                else if (voieTxt.isEmpty()){voie.setError("Veuillez remplir ce champ");}
+                else if (codePostalTxt.isEmpty()){codePostal.setError("Veuillez remplir ce champ");}
+                else if (villeTxt.isEmpty()){ville.setError("Veuillez remplir ce champ");}
+                else {
+                    mListener.onUpdateAgenceFragmentListener(
+                            new Agence(
+                                    raisonSocialeTxt,
+                                    siretTxt,
+                                    voieTxt,
+                                    codePostalTxt,
+                                    villeTxt)
+                    );
                 }
             }
         });
@@ -87,6 +100,6 @@ public class UpdateAgenceFragment extends Fragment {
     }
 
     public interface OnUpdateAgenceFragmentListener {
-        void onUpdateAgenceFragmentListener();
+        void onUpdateAgenceFragmentListener(Agence agence);
     }
 }

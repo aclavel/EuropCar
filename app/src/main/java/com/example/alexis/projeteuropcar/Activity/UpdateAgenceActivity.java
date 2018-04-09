@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.alexis.projeteuropcar.BO.Agence;
 import com.example.alexis.projeteuropcar.Fragment.UpdateAgenceFragment;
 import com.example.alexis.projeteuropcar.R;
 
@@ -18,7 +19,7 @@ public class UpdateAgenceActivity extends AppCompatActivity implements UpdateAge
 
 
     @Override
-    public void onUpdateAgenceFragmentListener() {
-        Toast.makeText(this, "TODO : Go to Location", Toast.LENGTH_SHORT).show();
+    public void onUpdateAgenceFragmentListener(Agence agence) {
+        Toast.makeText(this, "TODO : Go to Location : " + agence.toString(), Toast.LENGTH_SHORT).show();
     }
 }
