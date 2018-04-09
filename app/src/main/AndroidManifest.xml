@@ -12,13 +12,15 @@
         <activity android:name=".Activity.ConnexionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Activity.InscriptionActivity" />
-        <activity android:name=".Activity.UpdateAgenceActivity"/>
+        <activity android:name=".Activity.UpdateAgenceActivity" />
         <activity android:name=".Activity.AccueilActivity" />
-        <activity android:name=".Activity.LocationActivity"/>
+        <activity android:name=".Activity.LocationListActivity" />
+        <activity android:name=".Activity.VehiculeListActivity"></activity>
     </application>
 
 </manifest>

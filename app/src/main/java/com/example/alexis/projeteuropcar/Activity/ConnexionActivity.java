@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.example.alexis.projeteuropcar.Fragment.ConnexionFragment;
 import com.example.alexis.projeteuropcar.R;
@@ -22,7 +19,7 @@ public class ConnexionActivity extends AppCompatActivity implements ConnexionFra
 
     @Override
     public void onConnextionInteraction(String mail, String password) {
-        Intent intent = new Intent(ConnexionActivity.this, AccueilActivity.class);
+        Intent intent = new Intent(ConnexionActivity.this, LocationListActivity.class);
         startActivity(intent);
     }
 
