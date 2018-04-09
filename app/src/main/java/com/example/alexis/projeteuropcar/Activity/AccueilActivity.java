@@ -3,6 +3,8 @@ package com.example.alexis.projeteuropcar.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.alexis.projeteuropcar.R;
+
 public class AccueilActivity extends AppCompatActivity {
 
     @Override
