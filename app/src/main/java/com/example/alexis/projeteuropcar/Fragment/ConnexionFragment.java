@@ -14,6 +14,7 @@ import android.widget.EditText;
 import com.example.alexis.projeteuropcar.Activity.ConnexionActivity;
 import com.example.alexis.projeteuropcar.Activity.InscriptionActivity;
 import com.example.alexis.projeteuropcar.R;
+import com.example.alexis.projeteuropcar.Utils.MethodsUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,10 +87,15 @@ public class ConnexionFragment extends Fragment {
             public void onClick(View view) {
                 String emailText = mail.getText().toString();
                 String passwordText = password.getText().toString();
-                if (!"".equals(emailText) && !"".equals(passwordText)) {
+
+                MethodsUtils methodsUtils = new MethodsUtils();
+                if (!methodsUtils.checkMail(emailText)) {
+                    mail.setError("Email incorrect");
+                } else if (passwordText.isEmpty()) {
+                    password.setError("Mot de passe incorrect");
+                } else {
                     mListener.onConnextionInteraction(emailText,passwordText);
                 }
-
             }
         });
 
@@ -99,6 +105,7 @@ public class ConnexionFragment extends Fragment {
                 mListener.onRegisterInteraction();
             }
         });
+
         return v;
     }
 

@@ -7,8 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.alexis.projeteuropcar.R;
+import com.example.alexis.projeteuropcar.Utils.MethodsUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +30,11 @@ public class InscriptionFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private EditText mail;
+    private EditText password;
+    private EditText confirmPassword;
+    private Button btnRegister;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,8 +72,34 @@ public class InscriptionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inscription, container, false);
+        View v = inflater.inflate(R.layout.fragment_inscription, container, false);
+
+        this.mail = v.findViewById(R.id.mail);
+        this.password = v.findViewById(R.id.password);
+        this.confirmPassword = v.findViewById(R.id.confirmPassword);
+        this.btnRegister = v.findViewById(R.id.btnRegister);
+
+
+        this.btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String emailText = mail.getText().toString();
+                String passwordText = password.getText().toString();
+                String confirmPasswordText = confirmPassword.getText().toString();
+
+                MethodsUtils methodsUtils = new MethodsUtils();
+                if (!methodsUtils.checkMail(emailText)) {
+                    mail.setError("Email incorrect");
+                } else if (passwordText.isEmpty()) {
+                    password.setError("Veuillez remplir ce champ");
+                } else if (!passwordText.equals(confirmPasswordText)) {
+                    confirmPassword.setError("Mot de passe non identique");
+                } else {
+                    mListener.onRegisterInteraction(emailText,passwordText,confirmPasswordText);
+                }
+            }
+        });
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -103,7 +137,7 @@ public class InscriptionFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        void onRegisterInteraction(String mail, String password, String confirmPassword);
         void onFragmentInteraction(Uri uri);
     }
 }

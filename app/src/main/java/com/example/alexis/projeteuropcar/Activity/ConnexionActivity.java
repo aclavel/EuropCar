@@ -22,7 +22,8 @@ public class ConnexionActivity extends AppCompatActivity implements ConnexionFra
 
     @Override
     public void onConnextionInteraction(String mail, String password) {
-
+        Intent intent = new Intent(ConnexionActivity.this, AccueilActivity.class);
+        startActivity(intent);
     }
 
     @Override
