@@ -16,7 +16,4 @@
     <string name="raison_sociale">Raison sociale :</string>
     <string name="votre_agence">Votre agence</string>
     <string name="les_vehicules">Les Véhicules</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
