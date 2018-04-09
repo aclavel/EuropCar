@@ -59,11 +59,11 @@ public class VehiculeListAdapter extends ArrayAdapter<Vehicule> {
 
 
         // MISE A JOUR DES WIDGETS AVEC LES VALEURS METIER
-        id.setText(vehicule.getId());
+        id.setText(String.valueOf(vehicule.getId()));
         libelle.setText(vehicule.getLibelle());
-        nbPlaces.setText(vehicule.getNbPlaces());
-        locationMinimum.setText(vehicule.getLocationMinimum());
-        locationMaximum.setText(vehicule.getLocationMaximum());
+        nbPlaces.setText(String.valueOf(vehicule.getNbPlaces()));
+        locationMinimum.setText(String.valueOf(vehicule.getLocationMinimum()));
+        locationMaximum.setText(String.valueOf(vehicule.getLocationMaximum()));
         tarifMinimum.setText(vehicule.getTarifMinimum().toString());
         tarifMaximum.setText(vehicule.getTarifMaximum().toString());
 

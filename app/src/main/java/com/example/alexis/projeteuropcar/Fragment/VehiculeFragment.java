@@ -23,7 +23,7 @@ public class VehiculeFragment extends Fragment {
 
     private ListView listeVehicules;
 
-    private OnFragmentInteractionListener mListener;
+    private OnVehiculeFragmentInteractionListener mListener;
 
     public VehiculeFragment() {
 
@@ -46,7 +46,7 @@ public class VehiculeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_vehicule, container, false);
+        View v = inflater.inflate(R.layout.fragment_vehicules, container, false);
         listeVehicules = v.findViewById(R.id.liste_vehicules);
 
         listeVehicules.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,8 +65,8 @@ public class VehiculeFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof OnVehiculeFragmentInteractionListener) {
+            mListener = (OnVehiculeFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString() + " must implement OnFragmentInteractionListener");
         }
@@ -78,8 +78,8 @@ public class VehiculeFragment extends Fragment {
         mListener = null;
     }
 
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
+    public interface OnVehiculeFragmentInteractionListener {
+        void onVehiculeFragmentInteractionInteraction(Uri uri);
     }
 
     public void refreshList(List<Vehicule> vehicules) {
