@@ -23,10 +23,10 @@ public class Location {
     private Date dateFin;
 
     public Location(){
-
+        this.id = UUID.randomUUID().toString();
     }
 
-    public Location(String id, Agence agence, Vehicule vehicule, float tarifJournalier, boolean onProgress, Date dateDebut, Date dateFin) {
+    public Location(Agence agence, Vehicule vehicule, float tarifJournalier, boolean onProgress, Date dateDebut, Date dateFin) {
         this.id = UUID.randomUUID().toString();
         this.agence = agence;
         this.vehicule = vehicule;
@@ -36,9 +36,7 @@ public class Location {
         this.dateFin = dateFin;
     }
 
-    public String getId() {
-        return id;
-    }
+    public String getId() {return id;}
     public void setId(String id) {
         this.id = id;
     }

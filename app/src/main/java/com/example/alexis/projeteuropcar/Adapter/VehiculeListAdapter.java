@@ -20,8 +20,7 @@ public class VehiculeListAdapter extends ArrayAdapter<Vehicule> {
     private Context context;
     private int layout;
     private List<Vehicule> vehicules;
-
-    private TextView id;
+    
     private TextView libelle;
     private TextView nbPlaces;
     private TextView locationMinimum;
@@ -48,8 +47,6 @@ public class VehiculeListAdapter extends ArrayAdapter<Vehicule> {
         // RECUPERATION OBJET METIER
         Vehicule vehicule = this.vehicules.get(position);
 
-        // RECUPERATION DES WIDGETS
-        id = convertView.findViewById(R.id.tp_vehicule_id);
         libelle = convertView.findViewById(R.id.tp_vehicule_libelle);
         nbPlaces = convertView.findViewById(R.id.tp_vehicule_nb_places);
         locationMinimum = convertView.findViewById(R.id.tp_vehicule_loc_min);
@@ -59,7 +56,6 @@ public class VehiculeListAdapter extends ArrayAdapter<Vehicule> {
 
 
         // MISE A JOUR DES WIDGETS AVEC LES VALEURS METIER
-        id.setText(vehicule.getId());
         libelle.setText(vehicule.getLibelle());
         nbPlaces.setText(String.valueOf(vehicule.getNbPlaces()));
         locationMinimum.setText(String.valueOf(vehicule.getLocationMinimum()));
