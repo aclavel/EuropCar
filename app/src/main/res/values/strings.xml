@@ -26,4 +26,10 @@
     <string name="date_de_fin">Date de fin</string>
     <string name="tarif_journalier">Tarif journalier</string>
     <string name="reserver">Réserver</string>
+    <string name="places">places</string>
+    <string name="location_entre">Location entre</string>
+    <string name="et">et</string>
+    <string name="jours">jours</string>
+    <string name="tarif_journalier_entre">Tarif journalier entre</string>
+    <string name="monnaie">€</string>
 </resources>
