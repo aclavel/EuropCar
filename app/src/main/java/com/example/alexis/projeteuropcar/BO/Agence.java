@@ -4,11 +4,13 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.util.UUID;
+
 @Entity
 public class Agence {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @PrimaryKey
+    private String id;
 
     private String raisonSocial;
     private String siret;
@@ -23,6 +25,7 @@ public class Agence {
 
     @Ignore
     public Agence(String raisonSocial, String siret, String voie, String codePostal, String ville, String synchro) {
+        this.id = UUID.randomUUID().toString();
         this.raisonSocial = raisonSocial;
         this.siret = siret;
         this.voie = voie;
@@ -40,23 +43,10 @@ public class Agence {
         this.ville = ville;
     }
 
-    @Override
-    public String toString() {
-        return "Agence{" +
-                "id='" + id + '\'' +
-                ", raisonSocial='" + raisonSocial + '\'' +
-                ", siret='" + siret + '\'' +
-                ", voie='" + voie + '\'' +
-                ", codePostal='" + codePostal + '\'' +
-                ", ville='" + ville + '\'' +
-                ", synchro='" + synchro + '\'' +
-                '}';
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -77,4 +67,17 @@ public class Agence {
 
     public String getSynchro() {return synchro;}
     public void setSynchro(String synchro) {this.synchro = synchro;}
+
+    @Override
+    public String toString() {
+        return "Agence{" +
+                "id='" + id + '\'' +
+                ", raisonSocial='" + raisonSocial + '\'' +
+                ", siret='" + siret + '\'' +
+                ", voie='" + voie + '\'' +
+                ", codePostal='" + codePostal + '\'' +
+                ", ville='" + ville + '\'' +
+                ", synchro='" + synchro + '\'' +
+                '}';
+    }
 }
