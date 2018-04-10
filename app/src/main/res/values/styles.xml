@@ -34,4 +34,12 @@
         <item name="android:paddingBottom">16dp</item>
     </style>
 
+    <style name="text_vert" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
 </resources>
