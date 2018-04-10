@@ -4,6 +4,12 @@
     android:padding="16dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/titre"
+        android:text="Les réservations"/>
+
     <fragment
         android:id="@+id/locationFragment"
         android:layout_width="match_parent"
@@ -15,11 +21,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/redirectVehiculeList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_foreground"
+            android:src="@drawable/car"
+            android:background="@color/colorPrimary"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
