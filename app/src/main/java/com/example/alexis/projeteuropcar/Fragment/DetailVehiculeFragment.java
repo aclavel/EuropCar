@@ -47,6 +47,7 @@ public class DetailVehiculeFragment extends Fragment {
     private DateTime beginDate;
     private DateTime endDate;
     private TextView errorDate;
+    private EditText tarifJournalier;
 
     private OnFragmentInteractionListener mListener;
 
@@ -108,15 +109,19 @@ public class DetailVehiculeFragment extends Fragment {
         pickerEnd.setDate(new DateTime());
 
         this.errorDate = v.findViewById(R.id.errorDate);
+        this.tarifJournalier = v.findViewById(R.id.frag_tarif_journalier);
         this.book = v.findViewById(R.id.frag_btn_reserver);
         this.book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int tarif = !tarifJournalier.getText().toString().isEmpty() ? Integer.valueOf(tarifJournalier.getText().toString()) : 0;
                 if ( beginDate.isAfter(endDate)) {
                     setInputErrorDate(getString(R.string.error_date));
                 } else if (beginDate.equals(endDate)) {
                     setInputErrorDate(getString(R.string.error_date_similar));
-                } else {
+                } else if (tarif <= 0){
+                    tarifJournalier.setError(getString(R.string.error_daily_rate));
+                } else  {
                     mListener.onClickBook(beginDate, endDate, 5);
                 }
             }

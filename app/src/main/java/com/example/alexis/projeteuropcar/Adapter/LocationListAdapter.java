@@ -12,6 +12,9 @@ import android.widget.TextView;
 import com.example.alexis.projeteuropcar.BO.Location;
 import com.example.alexis.projeteuropcar.R;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,12 +40,15 @@ public class LocationListAdapter extends ArrayAdapter<Location> {
 
         }
 
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+
+
         Location location = this.locationList.get(position);
         TextView beginDate = convertView.findViewById(R.id.beginDate);
         TextView endDate = convertView.findViewById(R.id.endDate);
         TextView tarif = convertView.findViewById(R.id.tarif);
-        beginDate.setText(location.getDateDebut().toString());
-        endDate.setText(location.getDateFin().toString());
+        beginDate.setText(df.format(location.getDateDebut()));
+        endDate.setText(df.format(location.getDateFin()));
         tarif.setText(String.valueOf(location.getTarifJournalier()));
 
         return convertView;
