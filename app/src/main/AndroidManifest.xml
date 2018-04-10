@@ -20,7 +20,8 @@
         <activity android:name=".Activity.UpdateAgenceActivity" />
         <activity android:name=".Activity.AccueilActivity" />
         <activity android:name=".Activity.LocationListActivity" />
-        <activity android:name=".Activity.VehiculeListActivity"></activity>
+        <activity android:name=".Activity.VehiculeListActivity" />
+        <activity android:name=".Activity.DetailLocationActivity"></activity>
     </application>
 
 </manifest>

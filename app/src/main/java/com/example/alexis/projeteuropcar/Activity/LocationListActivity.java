@@ -45,6 +45,12 @@ public class LocationListActivity extends AppCompatActivity implements LocationF
     }
 
     @Override
+    public void seeDetailInteraction(Location location) {
+        Intent intent = new Intent(LocationListActivity.this, DetailLocationActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
