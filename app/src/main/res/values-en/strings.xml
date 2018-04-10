@@ -26,4 +26,10 @@
     <string name="tarif_journalier">Daily rate</string>
     <string name="reserver">Book</string>
     <string name="token_register">Security code</string>
+    <string name="places">places</string>
+    <string name="location_entre">Renting between</string>
+    <string name="et">and</string>
+    <string name="jours">days</string>
+    <string name="tarif_journalier_entre">Daily rate between</string>
+    <string name="monnaie">€</string>
 </resources>
