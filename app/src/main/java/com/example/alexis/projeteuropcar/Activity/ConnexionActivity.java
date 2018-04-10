@@ -29,8 +29,4 @@ public class ConnexionActivity extends AppCompatActivity implements ConnexionFra
         startActivity(intent);
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
 }

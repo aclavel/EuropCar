@@ -35,7 +35,7 @@
     <string name="reservation">Booking</string>
     <string name="location">Renting</string>
     <string name="les_reservations">Booking</string>
-    <string name="error_date">End date must be superior than start</string>
-    <string name="error_date_similar">Both dates must be different</string>
-    <string name="error_daily_rate">Daily rate must be superieur than 0</string>
+    <string name="error_date">Invalid date</string>
+    <string name="ChampInvalide">Please fill in this field</string>
+    <string name="siretInvalide">Invalid Siret</string>
 </resources>

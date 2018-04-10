@@ -65,7 +65,13 @@ public class DetailLocationFragment extends Fragment {
         btnRendre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onClickBtnRendre(retour);
+                String kilometrageText = kilometrage.getText().toString();
+
+                if (kilometrageText.isEmpty()){
+                    kilometrage.setError(getString(R.string.ChampInvalide));
+                } else {
+                    mListener.onClickBtnRendre(retour);
+                }
             }
         });
 

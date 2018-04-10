@@ -117,10 +117,9 @@ public class DetailVehiculeFragment extends Fragment {
                 int tarif = !tarifJournalier.getText().toString().isEmpty() ? Integer.valueOf(tarifJournalier.getText().toString()) : 0;
                 if ( beginDate.isAfter(endDate)) {
                     setInputErrorDate(getString(R.string.error_date));
-                } else if (beginDate.equals(endDate)) {
-                    setInputErrorDate(getString(R.string.error_date_similar));
                 } else if (tarif <= 0){
-                    tarifJournalier.setError(getString(R.string.error_daily_rate));
+                    setInputErrorDate("");
+                    tarifJournalier.setError(getString(R.string.ChampInvalide));
                 } else  {
                     mListener.onClickBook(beginDate, endDate, 5);
                 }
@@ -132,7 +131,11 @@ public class DetailVehiculeFragment extends Fragment {
 
     public void setInputErrorDate(String msg) {
         errorDate.setText(msg);
-        errorDate.setVisibility(View.VISIBLE);
+        if (msg.isEmpty()) {
+            errorDate.setVisibility(View.GONE);
+        } else {
+            errorDate.setVisibility(View.VISIBLE);
+        }
     }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

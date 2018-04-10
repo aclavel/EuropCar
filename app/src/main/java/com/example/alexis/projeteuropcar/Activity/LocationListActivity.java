@@ -36,7 +36,7 @@ public class LocationListActivity extends AppCompatActivity implements Reservati
         Location location = new Location();
         location.setDateDebut(new Date());
         location.setDateFin(new Date());
-        location.setTarifJournalier(5.0f);
+        location.setTarifJournalier(59.99f);
         locationList.add(location);
         locationList.add(location);
         locationList.add(location);

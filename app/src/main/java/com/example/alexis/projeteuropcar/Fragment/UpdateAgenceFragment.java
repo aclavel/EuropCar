@@ -12,6 +12,7 @@ import android.widget.EditText;
 
 import com.example.alexis.projeteuropcar.BO.Agence;
 import com.example.alexis.projeteuropcar.R;
+import com.example.alexis.projeteuropcar.Utils.MethodsUtils;
 
 public class UpdateAgenceFragment extends Fragment {
 
@@ -62,11 +63,14 @@ public class UpdateAgenceFragment extends Fragment {
                 String codePostalTxt = codePostal.getText().toString();
                 String villeTxt = ville.getText().toString();
 
-                if (raisonSocialeTxt.isEmpty()){raisonSociale.setError("Veuillez remplir ce champ");}
-                else if (siretTxt.isEmpty()){siret.setError("Veuillez remplir ce champ");}
-                else if (voieTxt.isEmpty()){voie.setError("Veuillez remplir ce champ");}
-                else if (codePostalTxt.isEmpty()){codePostal.setError("Veuillez remplir ce champ");}
-                else if (villeTxt.isEmpty()){ville.setError("Veuillez remplir ce champ");}
+                MethodsUtils methodsUtils = new MethodsUtils();
+
+                if (raisonSocialeTxt.isEmpty()){raisonSociale.setError(getString(R.string.ChampInvalide));}
+                else if (siretTxt.isEmpty()){siret.setError(getString(R.string.ChampInvalide));}
+                else if (!methodsUtils.checkSiret(siretTxt)){siret.setError(getString(R.string.siretInvalide));}
+                else if (voieTxt.isEmpty()){voie.setError(getString(R.string.ChampInvalide));}
+                else if (codePostalTxt.isEmpty()){codePostal.setError(getString(R.string.ChampInvalide));}
+                else if (villeTxt.isEmpty()){ville.setError(getString(R.string.ChampInvalide));}
                 else {
                     mListener.onUpdateAgenceFragmentListener(
                             new Agence(

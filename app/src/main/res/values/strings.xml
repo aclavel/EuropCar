@@ -36,7 +36,7 @@
     <string name="location">Location</string>
     <string name="les_reservations">Les Réservations</string>
     <string name="token_register">Code de sécurité</string>
-    <string name="error_date">La date de fin doit être supérieur à la date de début</string>
-    <string name="error_date_similar" >Les deux dates doivent être differentes</string>
-    <string name="error_daily_rate">Le tarif journalier doit être supérieur à 0</string>
+    <string name="error_date">Date invalide</string>
+    <string name="ChampInvalide">Veuillez remplir ce champ</string>
+    <string name="siretInvalide">Siret invalide</string>
 </resources>

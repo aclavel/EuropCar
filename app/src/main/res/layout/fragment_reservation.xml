@@ -4,46 +4,48 @@
     android:orientation="vertical">
 
     <TextView
+        style="@style/text_vert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/date_de_debut"
-        style="@style/text_vert"/>
+        android:text="@string/date_de_debut" />
 
     <com.github.jhonnyx2012.horizontalpicker.HorizontalPicker
         android:id="@+id/frag_date_debut"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <TextView
+        style="@style/text_vert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/date_de_fin"
-        style="@style/text_vert"/>
+        android:paddingTop="8dp"
+        android:text="@string/date_de_fin" />
 
     <com.github.jhonnyx2012.horizontalpicker.HorizontalPicker
         android:id="@+id/frag_date_fin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/errorDate"
+        style="@style/text_error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"/>
-
+        android:visibility="gone" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        style="@style/text_vert"
         android:text="@string/tarif_journalier" />
 
     <EditText
         android:id="@+id/frag_tarif_journalier"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"/>
+        android:inputType="numberDecimal" />
 
 
     <Button

@@ -37,7 +37,13 @@
     <style name="text_vert" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="text_error" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/error</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:textSize">16dp</item>
         <item name="android:paddingBottom">8dp</item>
     </style>

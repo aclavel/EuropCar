@@ -15,11 +15,12 @@ public class MethodsUtils {
     }
 
     public static final String PATTERN_MAIL = "^[A-Za-z0-9+_.-]+@(.+)$";
+    public static final String PATTERN_SIRET = "^[0-9]{14}$";
 
-    public boolean checkMailValidity(String email){
+    public boolean checkRegexValidity(String pattern, String chaine){
 
-        Pattern p = Pattern.compile(PATTERN_MAIL);
-        Matcher m = p.matcher(email);
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(chaine);
         if (m.find()) {
             return true;
         }
@@ -27,7 +28,11 @@ public class MethodsUtils {
     }
 
     public boolean checkMail(String email) {
-        return !email.isEmpty() && checkMailValidity(email);
+        return !email.isEmpty() && checkRegexValidity(PATTERN_MAIL, email);
+    }
+
+    public boolean checkSiret(String siret) {
+        return !siret.isEmpty() && checkRegexValidity(PATTERN_SIRET, siret);
     }
 
 }
