@@ -77,6 +77,12 @@ public class LocationFragment extends Fragment {
 
         this.listLocation = v.findViewById(R.id.listLocation);
 
+        listLocation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                mListener.seeDetailInteraction((Location) adapterView.getItemAtPosition(i));
+            }
+        });
         return v;
     }
 
@@ -121,6 +127,7 @@ public class LocationFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
+        void seeDetailInteraction(Location location);
         void onFragmentInteraction(Uri uri);
     }
 }
