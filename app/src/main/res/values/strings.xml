@@ -34,4 +34,5 @@
     <string name="monnaie">€</string>
     <string name="reservation">Réservation</string>
     <string name="location">Location</string>
+    <string name="token_register">Code de sécurité</string>
 </resources>
