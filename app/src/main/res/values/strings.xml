@@ -32,4 +32,6 @@
     <string name="jours">jours</string>
     <string name="tarif_journalier_entre">Tarif journalier entre</string>
     <string name="monnaie">€</string>
+    <string name="reservation">Réservation</string>
+    <string name="location">Location</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.alexis.projeteuropcar.Activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class UpdateAgenceActivity extends AppCompatActivity implements UpdateAge
 
     @Override
     public void onUpdateAgenceFragmentListener(Agence agence) {
-        Toast.makeText(this, "TODO : Go to Location : " + agence.toString(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(UpdateAgenceActivity.this, LocationListActivity.class);
+        startActivity(intent);
     }
 }

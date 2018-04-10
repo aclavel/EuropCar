@@ -1,23 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:padding="16dp">
 
-    <ListView
-        android:id="@+id/detailVehiculeEntete"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:listSelector="@android:color/transparent">
+        android:layout_height="match_parent">
 
-    </ListView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/detailVehiculeFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        class="com.example.alexis.projeteuropcar.Fragment.DetailVehiculeFragment">
+            <TextView
+                style="@style/titre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reservation" />
 
-    </fragment>
+            <ListView
+                android:id="@+id/detailVehiculeEntete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:listSelector="@android:color/transparent">
+
+            </ListView>
+
+            <fragment
+                android:id="@+id/detailVehiculeFragment"
+                class="com.example.alexis.projeteuropcar.Fragment.DetailVehiculeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -31,4 +31,6 @@
     <string name="jours">days</string>
     <string name="tarif_journalier_entre">Daily rate between</string>
     <string name="monnaie">€</string>
+    <string name="reservation">Booking</string>
+    <string name="location">Renting</string>
 </resources>
