@@ -32,6 +32,8 @@
     <string name="jours">jours</string>
     <string name="tarif_journalier_entre">Tarif journalier entre</string>
     <string name="monnaie">€</string>
+    <string name="reservation">Réservation</string>
+    <string name="location">Location</string>
     <string name="token_register">Code de sécurité</string>
     <string name="error_date">La date de fin doit être supérieur à la date de début</string>
     <string name="error_date_similar" >Les deux dates doivent être differentes</string>

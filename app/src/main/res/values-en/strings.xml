@@ -32,6 +32,9 @@
     <string name="jours">days</string>
     <string name="tarif_journalier_entre">Daily rate between</string>
     <string name="monnaie">€</string>
+    <string name="reservation">Booking</string>
+    <string name="location">Renting</string>
+    <string name="les_reservations">Booking</string>
     <string name="error_date">End date must be superior than start</string>
     <string name="error_date_similar">Both dates must be different</string>
 </resources>

@@ -39,16 +39,4 @@ public class VehiculeListActivity extends AppCompatActivity implements VehiculeF
     public void onVehiculeFragmentInteractionInteraction(Uri uri) {
 
     }
-
-     /*
-
-
-        Intent intent = new Intent(CadeauxActivity.this, CadeauxDetailsActivity.class);
-                intent.putExtra("id", c.getId());
-                startActivity(intent);
-*/
-
-
-            /*
-        }*/
 }

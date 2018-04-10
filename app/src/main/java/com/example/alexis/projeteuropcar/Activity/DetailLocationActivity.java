@@ -1,14 +1,17 @@
 package com.example.alexis.projeteuropcar.Activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.alexis.projeteuropcar.Adapter.LocationListAdapter;
 import com.example.alexis.projeteuropcar.BO.Location;
+import com.example.alexis.projeteuropcar.BO.Retour;
 import com.example.alexis.projeteuropcar.Fragment.DetailLocationFragment;
 import com.example.alexis.projeteuropcar.R;
 
@@ -16,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class DetailLocationActivity extends AppCompatActivity implements DetailLocationFragment.OnFragmentInteractionListener {
+public class DetailLocationActivity extends AppCompatActivity implements DetailLocationFragment.OnDetailLocationFragmentInteractionListener {
 
     private ListView detailLocationEntete;
     @Override
@@ -38,7 +41,10 @@ public class DetailLocationActivity extends AppCompatActivity implements DetailL
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri) {
+    public void onClickBtnRendre(Retour retour) {
+        Intent intent = new Intent(DetailLocationActivity.this, LocationListActivity.class);
+        startActivity(intent);
 
+        Toast.makeText(this, retour.toString(), Toast.LENGTH_LONG).show();
     }
 }

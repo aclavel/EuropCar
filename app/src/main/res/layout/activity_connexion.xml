@@ -4,11 +4,15 @@
     android:padding="16dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <fragment
         android:id="@+id/connexionFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="com.example.alexis.projeteuropcar.Fragment.ConnexionFragment">
+        class="com.example.alexis.projeteuropcar.Fragment.ConnexionFragment" />
 
-    </fragment>
+    </ScrollView>
 </LinearLayout>
