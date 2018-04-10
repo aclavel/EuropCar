@@ -1,11 +1,11 @@
 package com.example.alexis.projeteuropcar.Activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.alexis.projeteuropcar.BO.Vehicule;
-import com.example.alexis.projeteuropcar.Fragment.LocationFragment;
 import com.example.alexis.projeteuropcar.Fragment.VehiculeFragment;
 import com.example.alexis.projeteuropcar.R;
 
@@ -26,6 +26,13 @@ public class VehiculeListActivity extends AppCompatActivity implements VehiculeF
 
         VehiculeFragment fragment = (VehiculeFragment) getSupportFragmentManager().findFragmentById(R.id.frag_liste_vehicule);
         fragment.refreshList(vehicules);
+    }
+
+    @Override
+    public void seeDetailVehicule(Vehicule vehicule) {
+        Intent intent = new Intent(VehiculeListActivity.this, DetailVehiculeActivity.class);
+        intent.putExtra("idVehicule", vehicule.getId());
+        startActivity(intent);
     }
 
     @Override

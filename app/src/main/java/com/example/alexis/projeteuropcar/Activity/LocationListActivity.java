@@ -8,14 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.alexis.projeteuropcar.BO.Location;
-import com.example.alexis.projeteuropcar.Fragment.LocationFragment;
+import com.example.alexis.projeteuropcar.Fragment.ReservationListFragment;
 import com.example.alexis.projeteuropcar.R;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class LocationListActivity extends AppCompatActivity implements LocationFragment.OnFragmentInteractionListener{
+public class LocationListActivity extends AppCompatActivity implements ReservationListFragment.OnFragmentInteractionListener{
 
     FloatingActionButton redirectVehiculeList;
     @Override
@@ -40,7 +40,7 @@ public class LocationListActivity extends AppCompatActivity implements LocationF
         locationList.add(location);
         locationList.add(location);
         locationList.add(location);
-        LocationFragment fragment = (LocationFragment) getSupportFragmentManager().findFragmentById(R.id.locationFragment);
+        ReservationListFragment fragment = (ReservationListFragment) getSupportFragmentManager().findFragmentById(R.id.locationFragment);
         fragment.refreshList(locationList);
     }
 

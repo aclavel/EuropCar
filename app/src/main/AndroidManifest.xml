@@ -21,7 +21,8 @@
         <activity android:name=".Activity.AccueilActivity" />
         <activity android:name=".Activity.LocationListActivity" />
         <activity android:name=".Activity.VehiculeListActivity" />
-        <activity android:name=".Activity.DetailLocationActivity"></activity>
+        <activity android:name=".Activity.DetailLocationActivity" />
+        <activity android:name=".Activity.DetailVehiculeActivity"></activity>
     </application>
 
 </manifest>
