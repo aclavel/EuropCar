@@ -16,4 +16,13 @@
     <string name="raison_sociale">Social reason :</string>
     <string name="votre_agence">Your agency</string>
     <string name="les_vehicules">Cars</string>
+    <string name="est_endommage">Is damaged</string>
+    <string name="le_plein_est_fait">Refueling is done</string>
+    <string name="nombre_de_kilometres">Number of kilometers</string>
+    <string name="ajouter_une_photo">Add a picture</string>
+    <string name="rendre">Return</string>
+    <string name="date_de_debut">Start date</string>
+    <string name="date_de_fin">End date</string>
+    <string name="tarif_journalier">Daily rate</string>
+    <string name="reserver">Book</string>
 </resources>

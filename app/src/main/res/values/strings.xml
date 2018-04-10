@@ -16,4 +16,14 @@
     <string name="raison_sociale">Raison sociale :</string>
     <string name="votre_agence">Votre agence</string>
     <string name="les_vehicules">Les Véhicules</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="est_endommage">Est endommagé</string>
+    <string name="le_plein_est_fait">Le plein est fait</string>
+    <string name="nombre_de_kilometres">Nombre de kilomètres</string>
+    <string name="ajouter_une_photo">Ajouter une photo</string>
+    <string name="rendre">Rendre</string>
+    <string name="date_de_debut">Date de début</string>
+    <string name="date_de_fin">Date de fin</string>
+    <string name="tarif_journalier">Tarif journalier</string>
+    <string name="reserver">Réserver</string>
 </resources>
