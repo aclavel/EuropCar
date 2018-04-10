@@ -26,4 +26,5 @@
     <string name="date_de_fin">Date de fin</string>
     <string name="tarif_journalier">Tarif journalier</string>
     <string name="reserver">Réserver</string>
+    <string name="token_register">Code de sécurité</string>
 </resources>

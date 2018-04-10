@@ -25,4 +25,5 @@
     <string name="date_de_fin">End date</string>
     <string name="tarif_journalier">Daily rate</string>
     <string name="reserver">Book</string>
+    <string name="token_register">Security code</string>
 </resources>

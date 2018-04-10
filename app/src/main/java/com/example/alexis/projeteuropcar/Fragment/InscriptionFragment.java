@@ -34,6 +34,7 @@ public class InscriptionFragment extends Fragment {
     private EditText mail;
     private EditText password;
     private EditText confirmPassword;
+    private EditText token;
     private Button btnRegister;
 
     private OnFragmentInteractionListener mListener;
@@ -77,6 +78,7 @@ public class InscriptionFragment extends Fragment {
         this.mail = v.findViewById(R.id.mail);
         this.password = v.findViewById(R.id.password);
         this.confirmPassword = v.findViewById(R.id.confirmPassword);
+        this.token = v.findViewById(R.id.token_register);
         this.btnRegister = v.findViewById(R.id.btnRegister);
 
 
@@ -86,6 +88,7 @@ public class InscriptionFragment extends Fragment {
                 String emailText = mail.getText().toString();
                 String passwordText = password.getText().toString();
                 String confirmPasswordText = confirmPassword.getText().toString();
+                String tokenText = token.getText().toString();
 
                 MethodsUtils methodsUtils = new MethodsUtils();
                 if (!methodsUtils.checkMail(emailText)) {
@@ -94,8 +97,10 @@ public class InscriptionFragment extends Fragment {
                     password.setError("Veuillez remplir ce champ");
                 } else if (!passwordText.equals(confirmPasswordText)) {
                     confirmPassword.setError("Mot de passe non identique");
+                } else if (tokenText.isEmpty()) {
+                    token.setError("Code invalide");
                 } else {
-                    mListener.onRegisterInteraction(emailText,passwordText,confirmPasswordText);
+                    mListener.onRegisterInteraction(emailText,passwordText,confirmPasswordText,tokenText);
                 }
             }
         });
@@ -137,7 +142,7 @@ public class InscriptionFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        void onRegisterInteraction(String mail, String password, String confirmPassword);
+        void onRegisterInteraction(String mail, String password, String confirmPassword,String token);
         void onFragmentInteraction(Uri uri);
     }
 }
