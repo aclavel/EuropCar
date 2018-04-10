@@ -1,5 +1,6 @@
 package com.example.alexis.projeteuropcar.Fragment;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,8 +8,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.alexis.projeteuropcar.Activity.DetailVehiculeActivity;
 import com.example.alexis.projeteuropcar.R;
+import com.github.jhonnyx2012.horizontalpicker.DatePickerListener;
+import com.github.jhonnyx2012.horizontalpicker.HorizontalPicker;
+
+import org.joda.time.DateTime;
+
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +39,14 @@ public class DetailVehiculeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private Button book;
+    private HorizontalPicker pickerBegin;
+    private HorizontalPicker pickerEnd;
+
+    private DateTime beginDate;
+    private DateTime endDate;
+    private TextView errorDate;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,10 +84,51 @@ public class DetailVehiculeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reservation, container, false);
+        View v = inflater.inflate(R.layout.fragment_reservation, container, false);
+
+
+        this.pickerBegin = (HorizontalPicker) v.findViewById(R.id.frag_date_debut);
+        this.pickerEnd = (HorizontalPicker) v.findViewById(R.id.frag_date_fin);
+
+        this.pickerBegin.setListener(new DatePickerListener() {
+            @Override
+            public void onDateSelected(DateTime dateSelected) {
+                beginDate = dateSelected;
+
+            }
+        }).setDays(100).setOffset(0).init();
+        pickerBegin.setDate(new DateTime());
+
+        this.pickerEnd.setListener(new DatePickerListener() {
+            @Override
+            public void onDateSelected(DateTime dateSelected) {
+                endDate = dateSelected;
+            }
+        }).setDays(100).setOffset(0).init();
+        pickerEnd.setDate(new DateTime());
+
+        this.errorDate = v.findViewById(R.id.errorDate);
+        this.book = v.findViewById(R.id.frag_btn_reserver);
+        this.book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ( beginDate.isAfter(endDate)) {
+                    setInputErrorDate(getString(R.string.error_date));
+                } else if (beginDate.equals(endDate)) {
+                    setInputErrorDate(getString(R.string.error_date_similar));
+                } else {
+                    mListener.onClickBook(beginDate, endDate, 5);
+                }
+            }
+        });
+
+        return v;
     }
 
+    public void setInputErrorDate(String msg) {
+        errorDate.setText(msg);
+        errorDate.setVisibility(View.VISIBLE);
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -104,6 +165,7 @@ public class DetailVehiculeFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
+        void onClickBook(DateTime startDate, DateTime endDate, float tariJournalier);
         void onFragmentInteraction(Uri uri);
     }
 }

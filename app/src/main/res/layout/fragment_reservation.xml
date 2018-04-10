@@ -6,22 +6,33 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/date_de_debut" />
+        android:text="@string/date_de_debut"
+        style="@style/text_vert"/>
 
-    <EditText
+    <com.github.jhonnyx2012.horizontalpicker.HorizontalPicker
         android:id="@+id/frag_date_debut"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/date_de_fin" />
+        android:text="@string/date_de_fin"
+        style="@style/text_vert"/>
 
-    <EditText
+    <com.github.jhonnyx2012.horizontalpicker.HorizontalPicker
         android:id="@+id/frag_date_fin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/errorDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+
 
     <TextView
         android:layout_width="match_parent"
