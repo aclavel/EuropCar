@@ -35,4 +35,5 @@
     <string name="reservation">Réservation</string>
     <string name="location">Location</string>
     <string name="token_register">Code de sécurité</string>
+    <string name="les_reservations">Les Réservations</string>
 </resources>

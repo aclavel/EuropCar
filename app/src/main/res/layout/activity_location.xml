@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/titre"
-        android:text="Les réservations"/>
+        android:text="@string/les_reservations"/>
 
     <fragment
         android:id="@+id/locationFragment"
