@@ -8,7 +8,7 @@
         android:id="@+id/locationFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        class="com.example.alexis.projeteuropcar.Fragment.LocationFragment">
+        class="com.example.alexis.projeteuropcar.Fragment.ReservationListFragment">
 
     </fragment>
 

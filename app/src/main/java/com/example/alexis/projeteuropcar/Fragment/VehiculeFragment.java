@@ -54,8 +54,7 @@ public class VehiculeFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 
-                Vehicule v = (Vehicule) listeVehicules.getItemAtPosition(position);
-                // appel detail
+                mListener.seeDetailVehicule((Vehicule) listeVehicules.getItemAtPosition(position));
             }
         });
 
@@ -79,6 +78,7 @@ public class VehiculeFragment extends Fragment {
     }
 
     public interface OnVehiculeFragmentInteractionListener {
+        void seeDetailVehicule(Vehicule vehicule);
         void onVehiculeFragmentInteractionInteraction(Uri uri);
     }
 
