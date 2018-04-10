@@ -20,9 +20,9 @@ public class VehiculeListActivity extends AppCompatActivity implements VehiculeF
         setContentView(R.layout.activity_vehicule_list);
 
         List<Vehicule> vehicules = new ArrayList<>();
-        vehicules.add(new Vehicule(1,"Peugeot 208 Rubis", 5,2,15, 200d, 300d));
-        vehicules.add(new Vehicule(2,"Volkswagen Citreon", 5,8,35, 75d, 100d));
-        vehicules.add(new Vehicule(3,"Citröen C3", 5,15,50, 15d, 35d));
+        vehicules.add(new Vehicule(1,"Peugeot 208 Rubis", 5,2,15, 200f, 300f));
+        vehicules.add(new Vehicule(2,"Volkswagen Citreon", 5,8,35, 75f, 100f));
+        vehicules.add(new Vehicule(3,"Citröen C3", 5,15,50, 15f, 35f));
 
         VehiculeFragment fragment = (VehiculeFragment) getSupportFragmentManager().findFragmentById(R.id.frag_liste_vehicule);
         fragment.refreshList(vehicules);

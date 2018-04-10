@@ -43,7 +43,7 @@ public class LocationListAdapter extends ArrayAdapter<Location> {
         TextView tarif = convertView.findViewById(R.id.tarif);
         beginDate.setText(location.getDateDebut().toString());
         endDate.setText(location.getDateFin().toString());
-        tarif.setText(location.getTarif().toString());
+        tarif.setText(String.valueOf(location.getTarifJournalier()));
 
         return convertView;
     }

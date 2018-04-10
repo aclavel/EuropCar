@@ -33,9 +33,13 @@ public class LocationListActivity extends AppCompatActivity implements LocationF
             }
         });
         List<Location> locationList = new ArrayList<>();
-        locationList.add(new Location(new Date(),new Date(),5.0));
-        locationList.add(new Location(new Date(),new Date(),4.0));
-        locationList.add(new Location(new Date(),new Date(),3.0));
+        Location location = new Location();
+        location.setDateDebut(new Date());
+        location.setDateFin(new Date());
+        location.setTarifJournalier(5.0f);
+        locationList.add(location);
+        locationList.add(location);
+        locationList.add(location);
         LocationFragment fragment = (LocationFragment) getSupportFragmentManager().findFragmentById(R.id.locationFragment);
         fragment.refreshList(locationList);
     }
