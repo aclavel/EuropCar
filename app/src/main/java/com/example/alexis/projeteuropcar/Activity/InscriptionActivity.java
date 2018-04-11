@@ -4,26 +4,26 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import com.example.alexis.projeteuropcar.Fragment.InscriptionFragment;
 import com.example.alexis.projeteuropcar.Fragment.ReservationListFragment;
-import com.example.alexis.projeteuropcar.Fragment.VehiculeFragment;
 import com.example.alexis.projeteuropcar.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InscriptionActivity extends AppCompatActivity implements InscriptionFragment.OnFragmentInteractionListener{
 
-
-    private String mailConnexion;
-    private String passwordConnexion;
+    String mailConnexion;
+    String passwordConnexion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.mailConnexion = getIntent().getStringExtra("mailConnexion");
+        this.passwordConnexion= getIntent().getStringExtra("passwordConnexion");
         setContentView(R.layout.activity_inscription);
-
-        mailConnexion = getIntent().getStringExtra("mail");
-        passwordConnexion = getIntent().getStringExtra("password");
 
     }
 
@@ -33,7 +33,13 @@ public class InscriptionActivity extends AppCompatActivity implements Inscriptio
         startActivity(intent);
     }
 
-    public String getMailConnexion() {return mailConnexion;}
-    public String getPasswordConnexion() {return passwordConnexion;}
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public void getLoginFromConnexion(EditText mail, EditText password){
+        mail.setText(mailConnexion);
+        password.setText(passwordConnexion);
+    }
 }
