@@ -24,8 +24,10 @@ public class ConnexionActivity extends AppCompatActivity implements ConnexionFra
     }
 
     @Override
-    public void onRegisterInteraction() {
+    public void onRegisterInteraction(String mail, String password) {
         Intent intent = new Intent(ConnexionActivity.this, InscriptionActivity.class);
+        intent.putExtra("mail", mail);
+        intent.putExtra("password", password);
         startActivity(intent);
     }
 

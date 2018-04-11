@@ -1,7 +1,6 @@
 package com.example.alexis.projeteuropcar.Fragment;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -73,7 +72,10 @@ public class ConnexionFragment extends Fragment {
         this.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onRegisterInteraction();
+                mListener.onRegisterInteraction(
+                        mail.getText().toString(),
+                        password.getText().toString()
+                );
             }
         });
 
@@ -99,6 +101,6 @@ public class ConnexionFragment extends Fragment {
 
     public interface OnFragmentInteractionListener {
         void onConnextionInteraction(String mail, String password);
-        void onRegisterInteraction();
+        void onRegisterInteraction(String mail, String password);
     }
 }

@@ -5,9 +5,11 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.alexis.projeteuropcar.BO.Location;
 import com.example.alexis.projeteuropcar.BO.Vehicule;
 import com.example.alexis.projeteuropcar.Fragment.VehiculeFragment;
 import com.example.alexis.projeteuropcar.R;
+import com.example.alexis.projeteuropcar.Service.LocationService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +21,8 @@ public class VehiculeListActivity extends AppCompatActivity implements VehiculeF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicule_list);
 
-        List<Vehicule> vehicules = new ArrayList<>();
-        vehicules.add(new Vehicule(1,"Peugeot 208 Rubis", 5,2,15, 200f, 300f));
-        vehicules.add(new Vehicule(2,"Volkswagen Citreon", 5,8,35, 75f, 100f));
-        vehicules.add(new Vehicule(3,"Citröen C3", 5,15,50, 15f, 35f));
+        List<Vehicule> vehicules = new LocationService().getVehiculeList(this);
+
 
         VehiculeFragment fragment = (VehiculeFragment) getSupportFragmentManager().findFragmentById(R.id.frag_liste_vehicule);
         fragment.refreshList(vehicules);

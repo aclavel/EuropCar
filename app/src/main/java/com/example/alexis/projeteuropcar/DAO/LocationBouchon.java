@@ -11,19 +11,22 @@ import java.util.List;
 public class LocationBouchon implements ILocationDAO {
 
     private List<Location> locations;
+    private List<Vehicule> vehicules;
 
     public LocationBouchon() {
-        locations = new ArrayList<>();
 
+        locations = new ArrayList<>();
         locations.add(new Location("","", 45f, true, new Date(), new Date()));
         locations.add(new Location("","", 80f, true, new Date(), new Date()));
         locations.add(new Location("","", 125f, false, new Date(), new Date()));
         locations.add(new Location("","", 79f, true, new Date(), new Date()));
         locations.add(new Location("","", 49f, false, new Date(), new Date()));
 
+        vehicules = new ArrayList<>();
+        vehicules.add(new Vehicule(1,"Peugeot 208 Rubis", 5,2,15, 200f, 300f));
+        vehicules.add(new Vehicule(2,"Volkswagen Citreon", 5,8,35, 75f, 100f));
+        vehicules.add(new Vehicule(3,"Citröen C3", 5,15,50, 15f, 35f));
     }
-
-
 
     @Override
     public List<Location> getListLocation() {
@@ -51,7 +54,7 @@ public class LocationBouchon implements ILocationDAO {
 
     @Override
     public List<Vehicule> getListVehicule() {
-        return null;
+        return vehicules;
     }
 
     @Override
