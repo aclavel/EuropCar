@@ -1,5 +1,6 @@
 package com.example.alexis.projeteuropcar.BO;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
@@ -11,6 +12,7 @@ public class Retour {
 
     @PrimaryKey
     private String id;
+    @ColumnInfo(name = "idLocation")
     private Location location;
     private boolean isEndommage;
     private boolean isPleinEffectue;

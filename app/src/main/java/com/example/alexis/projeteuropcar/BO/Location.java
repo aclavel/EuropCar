@@ -1,21 +1,21 @@
 package com.example.alexis.projeteuropcar.BO;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * Created by alexis on 09/04/2018.
- */
-
-@Entity
+@Entity(tableName = "Location")
 public class Location {
 
     @PrimaryKey
     private String id;
+    @ColumnInfo(name = "idAgence")
     private Agence agence;
+    @ColumnInfo(name = "idVehicule")
     private Vehicule vehicule;
     private float tarifJournalier;
     private boolean onProgress;
@@ -26,6 +26,7 @@ public class Location {
         this.id = UUID.randomUUID().toString();
     }
 
+    @Ignore
     public Location(Agence agence, Vehicule vehicule, float tarifJournalier, boolean onProgress, Date dateDebut, Date dateFin) {
         this.id = UUID.randomUUID().toString();
         this.agence = agence;
