@@ -1,15 +1,10 @@
 package com.example.alexis.projeteuropcar.BO;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.PrimaryKey;
 
 import java.util.UUID;
 
-@Entity
 public class Agence {
 
-    @PrimaryKey
     private String id;
 
     private String raisonSocial;
@@ -20,10 +15,9 @@ public class Agence {
     private String synchro;
 
     public Agence() {
-
+        this.id = UUID.randomUUID().toString();
     }
 
-    @Ignore
     public Agence(String raisonSocial, String siret, String voie, String codePostal, String ville, String synchro) {
         this.id = UUID.randomUUID().toString();
         this.raisonSocial = raisonSocial;
@@ -34,7 +28,6 @@ public class Agence {
         this.synchro = synchro;
     }
 
-    @Ignore
     public Agence(String raisonSocial, String siret, String voie, String codePostal, String ville) {
         this.raisonSocial = raisonSocial;
         this.siret = siret;

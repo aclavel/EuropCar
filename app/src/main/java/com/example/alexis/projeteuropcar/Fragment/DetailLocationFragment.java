@@ -55,7 +55,7 @@ public class DetailLocationFragment extends Fragment {
         this.btnRendre = v.findViewById(R.id.frag_btn_rendre);
 
         final Retour retour = new Retour(
-                new Location(),
+                "987654312",
                 this.isEndommage.isChecked(),
                 this.pleinFait.isChecked(),
                 this.kilometrage.getText().toString(),

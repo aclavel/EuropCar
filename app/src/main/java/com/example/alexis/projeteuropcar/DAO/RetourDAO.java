@@ -14,10 +14,10 @@ import java.util.List;
 @Dao
 public interface RetourDAO {
     @Insert
-    String insert(Retour retour);
+    void insert(Retour retour);
 
     @Insert
-    String[] insertAll(Retour... retours);
+    void insertAll(Retour... retours);
 
     @Delete
     void delete(Retour retour);

@@ -10,6 +10,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.alexis.projeteuropcar.Activity.LocationListActivity;
 import com.example.alexis.projeteuropcar.BO.Location;
+import com.example.alexis.projeteuropcar.DAO.LocationBouchon;
 import com.example.alexis.projeteuropcar.R;
 
 import org.json.JSONArray;
@@ -22,6 +23,8 @@ import java.util.List;
 
 public class LocationService {
 
+    private LocationBouchon locationBouchon;
+
     public static List<Location> dataTest(){
         List<Location> locationList = new ArrayList<>();
         Location location = new Location();
@@ -33,6 +36,7 @@ public class LocationService {
         locationList.add(location);
         return locationList;
     }
+
     public static List<Location> getReservationList(Context ctx) {
 
         List<Location> locationList = new ArrayList<>();
@@ -63,6 +67,7 @@ public class LocationService {
         queue.add(request);
 
         //TODO return locationList
-        return dataTest();
+        LocationBouchon locationBouchon = new LocationBouchon();
+        return locationBouchon.getListLocationEnCours();
     }
 }

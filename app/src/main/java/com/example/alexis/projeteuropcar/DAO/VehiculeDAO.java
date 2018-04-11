@@ -13,10 +13,10 @@ import java.util.List;
 @Dao
 public interface VehiculeDAO {
     @Insert
-    String insert(Vehicule vehicule);
+    void insert(Vehicule vehicule);
 
     @Insert
-    String[] insertAll(Vehicule... vehicules);
+    void insertAll(Vehicule... vehicules);
 
     @Delete
     void delete(Vehicule vehicule);

@@ -16,6 +16,7 @@
     <string name="raison_sociale">Social reason :</string>
     <string name="votre_agence">Your agency</string>
     <string name="les_vehicules">Cars</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="est_endommage">Is damaged</string>
     <string name="le_plein_est_fait">Refueling is done</string>
     <string name="nombre_de_kilometres">Number of kilometers</string>

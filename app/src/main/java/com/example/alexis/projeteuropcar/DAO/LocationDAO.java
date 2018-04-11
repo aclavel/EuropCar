@@ -13,10 +13,10 @@ import java.util.List;
 @Dao
 public interface LocationDAO {
     @Insert
-    String insert(Location location);
+    void insert(Location location);
 
     @Insert
-    String[] insertAll(Location... locations);
+    void insertAll(Location... locations);
 
     @Delete
     void delete(Location location);

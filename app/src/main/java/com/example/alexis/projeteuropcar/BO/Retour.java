@@ -2,18 +2,27 @@ package com.example.alexis.projeteuropcar.BO;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 import java.util.UUID;
 
-@Entity
+import static android.arch.persistence.room.ForeignKey.CASCADE;
+
+@Entity(foreignKeys = @ForeignKey(entity = Location.class,
+                parentColumns = "id",
+                childColumns = "idLocation",
+                onDelete = CASCADE
+        ), tableName = "Retour")
 public class Retour {
 
     @PrimaryKey
+    @NonNull
     private String id;
     @ColumnInfo(name = "idLocation")
-    private Location location;
+    private String idLocation;
     private boolean isEndommage;
     private boolean isPleinEffectue;
     private String nbKmEffectues;
@@ -24,9 +33,9 @@ public class Retour {
     }
 
     @Ignore
-    public Retour(Location location, boolean isEndommage, boolean isPleinEffectue, String nbKmEffectues, String photo) {
+    public Retour(String idLocation, boolean isEndommage, boolean isPleinEffectue, String nbKmEffectues, String photo) {
         this.id = UUID.randomUUID().toString();
-        this.location = location;
+        this.idLocation = idLocation;
         this.isEndommage = isEndommage;
         this.isPleinEffectue = isPleinEffectue;
         this.nbKmEffectues = nbKmEffectues;
@@ -36,8 +45,8 @@ public class Retour {
     public String getId() {return id;}
     public void setId(String id) {this.id = id;}
 
-    public Location getLocation() {return location;}
-    public void setLocation(Location location) {this.location = location;}
+    public String getIdLocation() {return idLocation;}
+    public void setIdLocation(String idLocation) {this.idLocation = idLocation;}
 
     public boolean isEndommage() {return isEndommage;}
     public void setEndommage(boolean endommage) {isEndommage = endommage;}
@@ -55,7 +64,7 @@ public class Retour {
     public String toString() {
         return "Retour{" +
                 "id='" + id + '\'' +
-                ", location=" + location +
+                ", idLocation='" + idLocation + '\'' +
                 ", isEndommage=" + isEndommage +
                 ", isPleinEffectue=" + isPleinEffectue +
                 ", nbKmEffectues='" + nbKmEffectues + '\'' +
