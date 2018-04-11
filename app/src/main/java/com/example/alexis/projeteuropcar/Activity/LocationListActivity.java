@@ -10,6 +10,7 @@ import android.view.View;
 import com.example.alexis.projeteuropcar.BO.Location;
 import com.example.alexis.projeteuropcar.Fragment.ReservationListFragment;
 import com.example.alexis.projeteuropcar.R;
+import com.example.alexis.projeteuropcar.Service.LocationService;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,16 +33,11 @@ public class LocationListActivity extends AppCompatActivity implements Reservati
                 startActivity(intent);
             }
         });
-        List<Location> locationList = new ArrayList<>();
-        Location location = new Location();
-        location.setDateDebut(new Date());
-        location.setDateFin(new Date());
-        location.setTarifJournalier(59.99f);
-        locationList.add(location);
-        locationList.add(location);
-        locationList.add(location);
+
+        List<Location> listLocation = LocationService.getReservationList(this);
+
         ReservationListFragment fragment = (ReservationListFragment) getSupportFragmentManager().findFragmentById(R.id.locationFragment);
-        fragment.refreshList(locationList);
+        fragment.refreshList(listLocation);
     }
 
     @Override
