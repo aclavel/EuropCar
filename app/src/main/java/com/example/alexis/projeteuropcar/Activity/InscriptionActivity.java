@@ -82,6 +82,7 @@ public class InscriptionActivity extends AppCompatActivity implements Inscriptio
                 Intent intent = new Intent(InscriptionActivity.this, UpdateAgenceActivity.class);
                 intent.putExtra("agenceID", strings.get(0));
                 intent.putExtra("userID", strings.get(1));
+                intent.putExtra("mail", InscriptionActivity.this.mail);
                 startActivity(intent);
 
             } else if (strings.size() == 1) {
