@@ -8,18 +8,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.alexis.projeteuropcar.Activity.LocationListActivity;
 import com.example.alexis.projeteuropcar.BO.Location;
 import com.example.alexis.projeteuropcar.BO.Vehicule;
 import com.example.alexis.projeteuropcar.DAO.LocationBouchon;
-import com.example.alexis.projeteuropcar.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class LocationService {

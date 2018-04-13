@@ -50,8 +50,8 @@ public class ConnexionFragment extends Fragment {
         this.btnConnexion = v.findViewById(R.id.btnConnexion);
         this.btnRegister = v.findViewById(R.id.btnRegister);
 
-        this.mail.setText("test@test.test");
-        this.password.setText("Pa$$w0rd");
+        this.mail.setText("test2@icysoft.fr");
+        this.password.setText("azerty");
 
         this.btnConnexion.setOnClickListener(new View.OnClickListener() {
             @Override

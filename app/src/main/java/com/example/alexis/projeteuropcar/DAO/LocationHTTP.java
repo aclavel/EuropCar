@@ -30,4 +30,5 @@ public class LocationHTTP implements ILocationDAO {
     public Vehicule getVehiculeById(String id) {
         return null;
     }
+
 }
