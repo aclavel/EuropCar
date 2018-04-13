@@ -18,6 +18,7 @@ import com.example.alexis.projeteuropcar.BO.Vehicule;
 import com.example.alexis.projeteuropcar.Fragment.VehiculeFragment;
 import com.example.alexis.projeteuropcar.R;
 import com.example.alexis.projeteuropcar.Service.LocationService;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,8 +39,10 @@ public class VehiculeListActivity extends AppCompatActivity implements VehiculeF
 
     @Override
     public void seeDetailVehicule(Vehicule vehicule) {
+
         Intent intent = new Intent(VehiculeListActivity.this, DetailVehiculeActivity.class);
-        intent.putExtra("idVehicule", vehicule.getId());
+        String vehiculeJson = new Gson().toJson(vehicule);
+        intent.putExtra("vehiculeJson", vehiculeJson);
         startActivity(intent);
     }
 
@@ -47,6 +50,8 @@ public class VehiculeListActivity extends AppCompatActivity implements VehiculeF
     public void onVehiculeFragmentInteractionInteraction(Uri uri) {
 
     }
+
+
 
     private class GetVehiculeListTask extends AsyncTask<Void, Void, Void> {
 
