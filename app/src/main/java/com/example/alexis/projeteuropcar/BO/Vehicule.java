@@ -38,6 +38,18 @@ public class Vehicule {
         this.tarifMaximum = tarifMaximum;
     }
 
+    public Vehicule(@NonNull String id, int nbPlaces, int locationMinimum, int locationMaximum, float tarifMinimum, float tarifMaximum, float tarifMoyen, boolean isDispo) {
+        this.id = UUID.randomUUID().toString();
+        this.nbPlaces = nbPlaces;
+        this.locationMinimum = locationMinimum;
+        this.locationMaximum = locationMaximum;
+        this.tarifMinimum = tarifMinimum;
+        this.tarifMaximum = tarifMaximum;
+        this.tarifMoyen = tarifMoyen;
+        this.isDispo = isDispo;
+    }
+
+
     public String getId() {return id;}
     public void setId(String id) {this.id = id;}
 

@@ -37,7 +37,8 @@ public class LocationListActivity extends AppCompatActivity implements Reservati
         List<Location> listLocation = new LocationService().getReservationList(this);
 
         ReservationListFragment fragment = (ReservationListFragment) getSupportFragmentManager().findFragmentById(R.id.locationFragment);
-        fragment.refreshList(listLocation);
+
+       // fragment.refreshList(listLocation);
     }
 
     @Override
