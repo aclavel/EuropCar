@@ -35,7 +35,12 @@ public class UpdateAgenceActivity extends AppCompatActivity implements UpdateAge
         this.userID = getIntent().getStringExtra("userID");
         this.mail = getIntent().getStringExtra("mail");
 
+        Log.i("", "***************************************************************************************************************");
         Log.i("Agence", agence.toString());
+        Log.i("agenceID", this.agenceID);
+        Log.i("userID", this.userID);
+        Log.i("mail", this.mail);
+        Log.i("", "***************************************************************************************************************");
 
         if(agenceID != null && !"".equals(agenceID) && userID != null && !"".equals(userID) && mail != null && !"".equals(mail)){
             UpdateAgenceActivity.ConnectionTask task = new ConnectionTask();

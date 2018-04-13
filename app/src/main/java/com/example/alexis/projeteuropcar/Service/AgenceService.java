@@ -1,6 +1,7 @@
 package com.example.alexis.projeteuropcar.Service;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,7 +35,7 @@ public class AgenceService {
 
         RequestFuture<JSONObject> future = RequestFuture.newFuture();
         JsonObjectRequest request = new JsonObjectRequest(
-                Request.Method.POST,
+                Request.Method.PUT,
                 "http://10.0.2.2:8080/agences/" + agenceID + "/" + userID,
                 new JSONObject(jsonParams),
                 future,
