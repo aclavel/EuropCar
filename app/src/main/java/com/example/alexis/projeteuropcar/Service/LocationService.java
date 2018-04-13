@@ -42,7 +42,7 @@ public class LocationService {
         List<Location> locationList = new ArrayList<>();
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
-                "http://localhost:8080/vehicules",
+                ctx.getString(R.string.API_url) + "vehicules",
                 null,
                 new Response.Listener<JSONObject>() {
 

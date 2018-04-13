@@ -8,6 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.Volley;
+import com.example.alexis.projeteuropcar.R;
 
 import org.json.JSONObject;
 
@@ -36,7 +37,7 @@ public class AgenceService {
         RequestFuture<JSONObject> future = RequestFuture.newFuture();
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.PUT,
-                "http://10.0.2.2:8080/agences/" + agenceID + "/" + userID,
+                ctx.getString(R.string.API_url) + agenceID + "/" + userID,
                 new JSONObject(jsonParams),
                 future,
                 future

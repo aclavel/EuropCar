@@ -39,4 +39,5 @@
     <string name="error_date">Date invalide</string>
     <string name="ChampInvalide">Veuillez remplir ce champ</string>
     <string name="siretInvalide">Siret invalide</string>
+    <string name="API_url">http://10.0.2.2:8080/</string>
 </resources>

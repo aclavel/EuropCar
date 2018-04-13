@@ -9,6 +9,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.Volley;
 import com.example.alexis.projeteuropcar.Activity.InscriptionActivity;
+import com.example.alexis.projeteuropcar.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +33,7 @@ public class LoginService {
         RequestFuture<JSONObject> future = RequestFuture.newFuture();
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                "http://10.0.2.2:8080/connect",
+                ctx.getString(R.string.API_url) +"connect",
                 new JSONObject(jsonParams),
                 future,
                 future
@@ -89,7 +90,7 @@ public class LoginService {
         RequestFuture<JSONObject> future = RequestFuture.newFuture();
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                "http://10.0.2.2:8080/subscribe/" + token,
+                ctx.getString(R.string.API_url)+ "subscribe/" + token,
                 new JSONObject(jsonParams),
                 future,
                 future
