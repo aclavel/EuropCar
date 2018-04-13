@@ -16,8 +16,12 @@ import com.example.alexis.projeteuropcar.Fragment.DetailVehiculeFragment;
 import com.example.alexis.projeteuropcar.R;
 import com.github.jhonnyx2012.horizontalpicker.DatePickerListener;
 import com.github.jhonnyx2012.horizontalpicker.HorizontalPicker;
+import com.google.gson.Gson;
 
 import org.joda.time.DateTime;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,10 +38,13 @@ public class DetailVehiculeActivity extends AppCompatActivity implements DetailV
 
         this.detailVehiculeEntete = findViewById(R.id.detailVehiculeEntete);
 
-        String idVehicule = getIntent().getStringExtra("idVehicule");
+        String vehiculeJson = getIntent().getStringExtra("vehiculeJson");
+
+        Gson gson = new Gson();
+        Vehicule vehicule = gson.fromJson(vehiculeJson,Vehicule.class);
 
         List<Vehicule> vehicules = new ArrayList<>();
-        vehicules.add(new Vehicule(1,"Peugeot 208 Rubis", 5,2,15, 200f, 300f));
+        vehicules.add(vehicule);
 
         ArrayAdapter adapter = new VehiculeListAdapter(this ,R.layout.template_vehicule_list,vehicules);
         detailVehiculeEntete.setAdapter(adapter);
